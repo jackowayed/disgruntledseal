@@ -1,0 +1,28 @@
+h1 {
+background-color: black;
+color: red;
+font-family: arial;
+}
+
+p {
+font-family: arial;
+font-size: 120%
+}
+#sidel{
+float: left;
+width: 150px;
+margin: 0;
+padding: 1em;
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: #000000;
+}
+#main{
+margin-left: 175px;
+margin-right: 150px;
+}
+#sider{
+float: right;
+margin:0;
+padding: 1em;
+}

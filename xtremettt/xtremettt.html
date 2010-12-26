@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Extreme Tic-Tac-Toe</title>
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<style type="text/css">
+table {
+border: 3px #000 solid;
+}
+td.inner {
+border: 1px #000 solid;
+height: 30px;
+width: 30px;
+text-align: center;
+font-size: 54;
+}
+table.illegal {
+background-color: #808080;
+}
+</style>
+<script type="text/javascript" src="xtremettt.js" language="JavaScript"></script>
+</head>
+<body>
+<div id="sidel">
+<p id="xscore">X:0</p>
+<p id="oscore">O:0</p>
+<p id="winner">X's turn</p>
+<form id="form" action="javascript:reset();">
+Allow more than 1 Tic-Tac-Toe per board: Yes: <input type="radio" name="multttt" value="true" /><br />
+No:<input type="radio" name="multttt" value="false" />
+(Must click "New Game" to take effect)
+<input type="submit" value="New Game" />
+</form>
+</div>
+<div id="sider">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5449478611192747";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_type = "text_image";
+//2007-07-08: Xtreme-Side
+google_ad_channel = "5004955136";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div id="main">
+<table>
+<tr>
+<td>
+<table id='00'>
+<tr>
+<td id='0000' onclick='javascript:pick(0,0,0,0)' class='inner'>&nbsp;</td>
+<td id='0001' onclick='javascript:pick(0,0,0,1)' class='inner'>&nbsp;</td>
+<td id='0002' onclick='javascript:pick(0,0,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='0010' onclick='javascript:pick(0,0,1,0)' class='inner'>&nbsp;</td>
+<td id='0011' onclick='javascript:pick(0,0,1,1)' class='inner'>&nbsp;</td>
+<td id='0012' onclick='javascript:pick(0,0,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='0020' onclick='javascript:pick(0,0,2,0)' class='inner'>&nbsp;</td>
+<td id='0021' onclick='javascript:pick(0,0,2,1)' class='inner'>&nbsp;</td>
+<td id='0022' onclick='javascript:pick(0,0,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td>
+<table id='01'>
+<tr>
+<td id='0100' onclick='javascript:pick(0,1,0,0)' class='inner'>&nbsp;</td>
+<td id='0101' onclick='javascript:pick(0,1,0,1)' class='inner'>&nbsp;</td>
+<td id='0102' onclick='javascript:pick(0,1,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='0110' onclick='javascript:pick(0,1,1,0)' class='inner'>&nbsp;</td>
+<td id='0111' onclick='javascript:pick(0,1,1,1)' class='inner'>&nbsp;</td>
+<td id='0112' onclick='javascript:pick(0,1,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='0120' onclick='javascript:pick(0,1,2,0)' class='inner'>&nbsp;</td>
+<td id='0121' onclick='javascript:pick(0,1,2,1)' class='inner'>&nbsp;</td>
+<td id='0122' onclick='javascript:pick(0,1,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td>
+<table id='02'>
+<tr>
+<td id='0200' onclick='javascript:pick(0,2,0,0)' class='inner'>&nbsp;</td>
+<td id='0201' onclick='javascript:pick(0,2,0,1)' class='inner'>&nbsp;</td>
+<td id='0202' onclick='javascript:pick(0,2,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='0210' onclick='javascript:pick(0,2,1,0)' class='inner'>&nbsp;</td>
+<td id='0211' onclick='javascript:pick(0,2,1,1)' class='inner'>&nbsp;</td>
+<td id='0212' onclick='javascript:pick(0,2,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='0220' onclick='javascript:pick(0,2,2,0)' class='inner'>&nbsp;</td>
+<td id='0221' onclick='javascript:pick(0,2,2,1)' class='inner'>&nbsp;</td>
+<td id='0222' onclick='javascript:pick(0,2,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table id='10'>
+<tr>
+<td id='1000' onclick='javascript:pick(1,0,0,0)' class='inner'>&nbsp;</td>
+<td id='1001' onclick='javascript:pick(1,0,0,1)' class='inner'>&nbsp;</td>
+<td id='1002' onclick='javascript:pick(1,0,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='1010' onclick='javascript:pick(1,0,1,0)' class='inner'>&nbsp;</td>
+<td id='1011' onclick='javascript:pick(1,0,1,1)' class='inner'>&nbsp;</td>
+<td id='1012' onclick='javascript:pick(1,0,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='1020' onclick='javascript:pick(1,0,2,0)' class='inner'>&nbsp;</td>
+<td id='1021' onclick='javascript:pick(1,0,2,1)' class='inner'>&nbsp;</td>
+<td id='1022' onclick='javascript:pick(1,0,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td>
+<table id='11'>
+<tr>
+<td id='1100' onclick='javascript:pick(1,1,0,0)' class='inner'>&nbsp;</td>
+<td id='1101' onclick='javascript:pick(1,1,0,1)' class='inner'>&nbsp;</td>
+<td id='1102' onclick='javascript:pick(1,1,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='1110' onclick='javascript:pick(1,1,1,0)' class='inner'>&nbsp;</td>
+<td id='1111' onclick='javascript:pick(1,1,1,1)' class='inner'>&nbsp;</td>
+<td id='1112' onclick='javascript:pick(1,1,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='1120' onclick='javascript:pick(1,1,2,0)' class='inner'>&nbsp;</td>
+<td id='1121' onclick='javascript:pick(1,1,2,1)' class='inner'>&nbsp;</td>
+<td id='1122' onclick='javascript:pick(1,1,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td>
+<table id='12'>
+<tr>
+<td id='1200' onclick='javascript:pick(1,2,0,0)' class='inner'>&nbsp;</td>
+<td id='1201' onclick='javascript:pick(1,2,0,1)' class='inner'>&nbsp;</td>
+<td id='1202' onclick='javascript:pick(1,2,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='1210' onclick='javascript:pick(1,2,1,0)' class='inner'>&nbsp;</td>
+<td id='1211' onclick='javascript:pick(1,2,1,1)' class='inner'>&nbsp;</td>
+<td id='1212' onclick='javascript:pick(1,2,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='1220' onclick='javascript:pick(1,2,2,0)' class='inner'>&nbsp;</td>
+<td id='1221' onclick='javascript:pick(1,2,2,1)' class='inner'>&nbsp;</td>
+<td id='1222' onclick='javascript:pick(1,2,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table id='20'>
+<tr>
+<td id='2000' onclick='javascript:pick(2,0,0,0)' class='inner'>&nbsp;</td>
+<td id='2001' onclick='javascript:pick(2,0,0,1)' class='inner'>&nbsp;</td>
+<td id='2002' onclick='javascript:pick(2,0,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='2010' onclick='javascript:pick(2,0,1,0)' class='inner'>&nbsp;</td>
+<td id='2011' onclick='javascript:pick(2,0,1,1)' class='inner'>&nbsp;</td>
+<td id='2012' onclick='javascript:pick(2,0,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='2020' onclick='javascript:pick(2,0,2,0)' class='inner'>&nbsp;</td>
+<td id='2021' onclick='javascript:pick(2,0,2,1)' class='inner'>&nbsp;</td>
+<td id='2022' onclick='javascript:pick(2,0,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td>
+<table id='21'>
+<tr>
+<td id='2100' onclick='javascript:pick(2,1,0,0)' class='inner'>&nbsp;</td>
+<td id='2101' onclick='javascript:pick(2,1,0,1)' class='inner'>&nbsp;</td>
+<td id='2102' onclick='javascript:pick(2,1,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='2110' onclick='javascript:pick(2,1,1,0)' class='inner'>&nbsp;</td>
+<td id='2111' onclick='javascript:pick(2,1,1,1)' class='inner'>&nbsp;</td>
+<td id='2112' onclick='javascript:pick(2,1,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='2120' onclick='javascript:pick(2,1,2,0)' class='inner'>&nbsp;</td>
+<td id='2121' onclick='javascript:pick(2,1,2,1)' class='inner'>&nbsp;</td>
+<td id='2122' onclick='javascript:pick(2,1,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td>
+<table id='22'>
+<tr>
+<td id='2200' onclick='javascript:pick(2,2,0,0)' class='inner'>&nbsp;</td>
+<td id='2201' onclick='javascript:pick(2,2,0,1)' class='inner'>&nbsp;</td>
+<td id='2202' onclick='javascript:pick(2,2,0,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='2210' onclick='javascript:pick(2,2,1,0)' class='inner'>&nbsp;</td>
+<td id='2211' onclick='javascript:pick(2,2,1,1)' class='inner'>&nbsp;</td>
+<td id='2212' onclick='javascript:pick(2,2,1,2)' class='inner'>&nbsp;</td>
+</tr>
+<tr>
+<td id='2220' onclick='javascript:pick(2,2,2,0)' class='inner'>&nbsp;</td>
+<td id='2221' onclick='javascript:pick(2,2,2,1)' class='inner'>&nbsp;</td>
+<td id='2222' onclick='javascript:pick(2,2,2,2)' class='inner'>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="rules.html">Rules</a>
+</div>
+</body>
+</html>
